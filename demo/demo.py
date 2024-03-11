@@ -3,9 +3,9 @@ import sys
 import argparse
 from os.path import join, realpath
 from flask import Flask, render_template, jsonify
+
 sys.path.append(realpath(join(realpath(__file__), '..', '..')))
 from engine import SpeechRecognitionEngine
-
 
 global asr_engine
 app = Flask(__name__)
@@ -35,7 +35,7 @@ class DemoAction:
     def __init__(self):
         self.asr_results = ""
         self.current_beam = ""
-    
+
     def __call__(self, x):
         results, current_context_length = x
         self.current_beam = results

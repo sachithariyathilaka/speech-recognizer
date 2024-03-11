@@ -1,6 +1,6 @@
 import ctcdecode
 
-from text_process import TextProcess
+from module.text_process import TextProcess
 
 textprocess = TextProcess()
 

@@ -6,7 +6,7 @@ import pyaudio
 import torch
 import torchaudio
 
-from dataset import get_featurizer
+from module.dataset import get_featurizer
 from module.decoder import CTCBeamDecoder
 
 
@@ -121,7 +121,7 @@ class DemoAction:
 
 
 if __name__ == "__main__":
-    model_file_path = "D:/dataset/speechrecognition.ckpt"
+    model_file_path = "D:/dataset/speechrecognition.zip"
     engine = SpeechRecognitionEngine(model_file_path)
     action = DemoAction()
 
