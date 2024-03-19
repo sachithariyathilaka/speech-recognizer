@@ -114,10 +114,11 @@ class DemoAction:
     def __call__(self, x):
         results, current_context_length = x
         self.current_beam = results
-        transcript = " ".join(self.asr_results.split() + results.split())
-        print(transcript)
-        if current_context_length > 10:
-            self.asr_results = transcript
+        # transcript = " ".join(self.asr_results.split() + results.split())
+        # print(transcript)
+        # if current_context_length > 10:
+        #     self.asr_results = transcript
+        print(results)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-import ctcdecode
+# import ctcdecode
 
 from module.text_process import TextProcess
 
@@ -47,12 +47,13 @@ class CTCBeamDecoder:
         self.blank_id = blank_id
 
         print("loading beam search with lm...")
-        self.decoder = ctcdecode.CTCBeamDecoder(
-            labels, alpha=0.522729216841, beta=0.96506699808,
-            beam_width=beam_size, blank_id=labels.index('_'),
-            model_path=kenlm_path)
+        # self.decoder = ctcdecode.CTCBeamDecoder(
+        #     labels, alpha=0.522729216841, beta=0.96506699808,
+        #     beam_width=beam_size, blank_id=labels.index('_'),
+        #     model_path=kenlm_path)
         print("finished loading beam search")
 
     def __call__(self, output):
-        beam_result, beam_scores, timestamps, out_seq_len = self.decoder.decode(output)
-        return convert_to_string(beam_result[0][0], labels, out_seq_len[0][0])
+        # beam_result, beam_scores, timestamps, out_seq_len = self.decoder.decode(output)
+        # return convert_to_string(beam_result[0][0], labels, out_seq_len[0][0])
+        return output
